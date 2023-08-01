@@ -20,10 +20,10 @@ const createAndSendToken = (user, statusCode, res) => {
     ), // 90 days
     httpOnly: true,
   };
-  if(process.env.NODE_ENV === 'production') cookieOptions.secure = true;
+  if (process.env.NODE_ENV === 'production') cookieOptions.secure = true;
 
-  res.cookie('jwt', token,cookieOptions);
-  
+  res.cookie('jwt', token, cookieOptions);
+
   // Remove password from output
   user.password = undefined;
 
