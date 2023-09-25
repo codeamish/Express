@@ -1,12 +1,14 @@
 doctype html 
 html 
     head 
-        meta(charset='UTF-8') 
-        meta(name='viewport' content='width=device-width, initial-scale=1.0') 
-        link(rel='stylesheet' href='/css/style.css')
-        link(rel='shortcut icon' type='image/png' href='/img/favicon.png')
-        link(rel='stylesheet' href='https://fonts.googleapis.com/css?family=Lato:300,300i,700')
-        title Natours | #{title}
+        block head
+            meta(charset='UTF-8') 
+            meta(name='viewport' content='width=device-width, initial-scale=1.0') 
+            link(rel='stylesheet' href='/css/style.css')
+            link(rel='shortcut icon' type='image/png' href='/img/favicon.png')
+            link(rel='stylesheet' href='https://fonts.googleapis.com/css?family=Lato:300,300i,700')
+            meta(http-equiv="Content-Security-Policy" content="default-src * self blob: data: gap:; style-src * self 'unsafe-inline' blob: data: gap:; script-src * 'self' 'unsafe-eval' 'unsafe-inline' blob: data: gap:; object-src * 'self' blob: data: gap:; img-src * self 'unsafe-inline' blob: data: gap:; connect-src self * 'unsafe-inline' blob: data: gap:; frame-src * self blob: data: gap:;")
+            title Natours | #{title}
     body 
         // HEADER   
         include _header
@@ -17,4 +19,7 @@ html
             h1 This is a placeholder heading
 
         // FOOTER
-        include _footer
+        include _footer 
+        //- script(src='/js/mapbox.js')
+        script(src='/js/axios.min.js')
+        script(src='/js/login.js')
